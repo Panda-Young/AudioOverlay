@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Video Player</title>
+<style>body{margin:0;background:#111;color:#eee;font-family:sans-serif}video{width:100%;height:auto;background:#000}#info{padding:10px;font-size:14px}</style>
+</head>
+<body>
+<video id="v" src="yimeng_60s.mp4" controls autoplay muted loop></video>
+<div id="info">Click play if not auto-playing.</div>
+<script>
+var v=document.getElementById('v');
+setTimeout(function(){ v.muted=false; v.play().catch(function(e){ document.getElementById('info').textContent='Play failed: '+e.message; }); }, 500);
+v.addEventListener('playing', function(){ document.getElementById('info').textContent='PLAYING'; });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "model": "UVR-BVE-4B_SN-44100-1.pth",
+  "architecture": "VR",
+  "aggression": 15,
+  "load_time_s": 0.1,
+  "separate_time_s": 88.2,
+  "audio_sec": 59.99,
+  "rtf": 1.47,
+  "rms_orig_db": -13.08,
+  "rms_vocals_db": -22.11,
+  "rms_inst_db": -15.02,
+  "bgm_suppression_db": -1.94,
+  "processed": {
+    "processed_g0.0": -22.11,
+    "processed_g0.1": -21.46,
+    "processed_g0.3": -19.58,
+    "processed_g0.5": -17.6,
+    "processed_g1.0": -13.53
+  },
+  "output_files": [
+    "original_(Vocals)_UVR-BVE-4B_SN-44100-1.wav",
+    "original_(Instrumental)_UVR-BVE-4B_SN-44100-1.wav"
+  ]
+}

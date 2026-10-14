@@ -1,0 +1,5 @@
+mode,mode_name,cpu_percent,latency_avg_us,latency_min_us,latency_max_us,rtf_percent,rms_range_db,peak_db,errors,stability_30s,memory_delta_mb,notes
+0,全局增益 Baseline,3.5,520,271,861,1.0,-4.9~-7.5,0.0,0,N/A,N/A,"纯增益stub，最低CPU/延迟，无BGM抑制效果"
+1,中置声道消除 Center Channel,18.5,920,734,1138,1.8,-4.5~-8.4,0.0,0,N/A,N/A,"Mid-side零延迟，消除中央人声保留侧向BGM，CPU中等"
+2,自适应谱滤波 Adaptive Spectral,55.5,28000,8733,30675,56.0,-4.1~-9.8,0.0~-0.7,0,PASS,209->210,"FFT+STFT per-bin自适应增益，CPU最高，延迟27-30ms接近实时预算上限(50ms帧)，30秒稳定无泄漏"
+3,神经分离 Neural Separation(降级),10.3,700,567,857,1.4,-4.2~-9.4,0.0,0,N/A,N/A,"NOT_AVAILABLE降级为全局增益，Spleeter/Demucs移动端实时不可行(延迟超标10-40倍)"

@@ -1,0 +1,31 @@
+=== VLC 本地视频/音频捕获测试日志摘要 ===
+测试时间: 2026-09-01 22:08 (第一次, VideoPlayerActivity) 和 22:17 (第二次, StartActivity)
+包名: org.videolan.vlc
+版本: 3.7.1 (x86_64, 官方Videolan源)
+捕获配置: sampleRate=48000, channels=2, format=PCM_16BIT
+
+测试1: VideoPlayerActivity 播放 test.mp4 (BigBuckBunny 1MB)
+- VLC启动, android_audiotrack模块初始化
+- 音频输出模块反复 add/remove
+- MediaSession: playbackState=STOPPED(1), position=0
+- VLC进程被系统冻结 (freezing)
+- RMS=-96.0 dB 持续
+
+测试2: StartActivity (VIEW intent) 播放 test_tone.wav
+- VLC StartActivity打开但不自动播放
+- 无活跃MediaSession
+- RMS=-96.0 dB 持续
+
+VLC日志关键行:
+- libvlc audio output: looking for audio output module matching "android_audiotrack": 4 candidates
+- libvlc audio output: using audio output module "android_audiotrack"
+- libvlc audio output: removing module "android_audiotrack"
+- onSessionPlaybackStateChanged: playbackState=PlaybackState {state=STOPPED(1)}
+
+可能原因:
+1. 测试视频(1MB BigBuckBunny)可能无音轨
+2. VLC VideoPlayerActivity 对纯音频文件处理有问题
+3. 模拟器App音频输出问题 (同YouTube/Chrome)
+
+结论: 无法在VLC中正常播放音频, 无法验证捕获。
+第一次测试完整日志见 00_baseline_stagefright.txt

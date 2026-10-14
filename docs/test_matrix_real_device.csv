@@ -1,0 +1,10 @@
+App名称,包名,是否能捕获,是否要求MediaProjection,是否需要用户确认,sample_rate,channels,PCM_format,latency_ms,CPU_percent,是否稳定,后台可持续,App切换后继续,App是否禁止capture,是否能检测目标App,备注
+抖音,com.ss.android.ugc.aweme,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,NO,未指定(未实现UsageStats检测),RMS=-15~-19dB Peak=-1.1dB 自动播放视频
+网易云音乐,com.netease.cloudmusic,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,NO,未指定,RMS=-13~-27dB Peak=-0.1~-1.6dB 音乐播放
+QQ音乐,com.tencent.qqmusic,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,NO,未指定,RMS=-12.8~-14.8dB Peak=-0.1~-1.0dB 音乐播放
+爱奇艺,com.qiyi.video,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,NO,未指定,RMS=-23~-40dB Peak=-7~-29.8dB 视频音频电平变化正常
+本地视频(系统播放器),N/A,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,N/A,未指定,实测(2026-09-02):范进中举20s片段(带音轨)经adb push后系统媒体查看器(com.miui.mediaviewer)播放,AudioPlaybackCapture捕获成功 播放期RMS=-14.5~-46.2dB(均值-18.9dB) Peak=-0.4~-28.3dB 播放前基线RMS=-96dB
+B站,tv.danmaku.bili,未测试,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,未安装
+腾讯视频,com.tencent.qqlive,未测试,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,未安装
+YouTube,com.google.android.youtube,未测试,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,未安装(GMS服务在国行MIUI上受限)
+Edge浏览器,com.microsoft.emmx,YES,YES,YES(首次),48000,2,PCM_16BIT,低(估计50-100ms),3.7,YES,YES,YES,NO,未指定(未实现UsageStats检测),实测URL=https://www.w3schools.com/html/mov_bbb.mp4 RMS=-30~-42dB Peak=-17~-25dB 网页视频需手动点击播放(自动播放被阻止) 测试日期2026-09-02

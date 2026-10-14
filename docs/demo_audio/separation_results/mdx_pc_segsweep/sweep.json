@@ -1,0 +1,37 @@
+{
+  "ref_vocals_rms": -14.18,
+  "results": [
+    {
+      "seg": 64,
+      "ok": true,
+      "chunk": 64512,
+      "secs": 1.463,
+      "rms_v": -13.65,
+      "rms_a": -24.65,
+      "corr": 0.9976,
+      "inf_total_s": 58.8,
+      "chunks": 56
+    },
+    {
+      "seg": 32,
+      "ok": true,
+      "chunk": 31744,
+      "secs": 0.72,
+      "rms_v": -13.6,
+      "rms_a": -24.89,
+      "corr": 0.9948,
+      "inf_total_s": 59.2,
+      "chunks": 113
+    },
+    {
+      "seg": 16,
+      "ok": false,
+      "error": "[ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Conv node. Name:'553_nchwc' Status Message: Invalid input shape: {1,192}"
+    },
+    {
+      "seg": 8,
+      "ok": false,
+      "error": "[ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Non-zero status code returned while running Conv node. Name:'532_nchwc' Status Message: Invalid input shape: {1,384}"
+    }
+  ]
+}

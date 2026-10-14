@@ -1,0 +1,8 @@
+App名称,包名,是否能捕获,是否要求MediaProjection,是否需要用户确认,sample_rate,channels,PCM_format,latency_ms,CPU_percent,是否稳定,后台可持续,App切换后继续,App是否禁止capture,是否能检测目标App,备注
+基线测试(stagefright系统命令),N/A(shell uid=2000),YES,YES,YES,48000,2,PCM_16BIT,低(<1000ms),低(<5%),YES,YES,YES,NO,未指定,440Hz正弦波测试:RMS=-9.0dB Peak=-6.0dB 证明AudioPlaybackCapture管道在Android17上完全正常工作
+YouTube,com.google.android.youtube,未验证(模拟器无App音频输出),YES,YES,48000,2,PCM_16BIT,N/A,N/A,N/A,YES,YES,未知,未指定,视频可正常播放(截图确认播放控件)但AudioFlinger显示0活跃轨道=无音频输出;停止捕获后仍0活跃轨道=非捕获导致;疑似Android17模拟器音频配置问题
+Chrome(网页YouTube),com.android.chrome,未验证(模拟器无App音频输出),YES,YES,48000,2,PCM_16BIT,N/A,N/A,N/A,YES,YES,未知,未指定,HTML5视频可正常播放(截图确认0:17/3:33)但AudioFlinger显示0活跃轨道=无音频输出;同YouTube疑似模拟器问题
+VLC,org.videolan.vlc,未验证(无法正常播放音频),YES,YES,48000,2,PCM_16BIT,N/A,N/A,N/A,YES,YES,未知,未指定,VideoPlayerActivity打开音频文件后立即STOPPED;StartActivity打开但不自动播放;音频输出模块反复add/remove;测试视频(1MB BigBuckBunny)可能无音轨
+抖音,com.ss.android.ugc.aweme,未验证(需登录),YES,YES,48000,2,PCM_16BIT,N/A,N/A,N/A,YES,YES,未知,未指定,App可启动但显示登录/注册页面需手机号登录;无游客模式;无法测试视频播放和音频捕获
+Bilibili,tv.danmaku.bili,未测试(未安装),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,APK下载失败:官方源wsdownload.hdslb.net DNS解析失败;APKPure直链返回错误页面;PlayStore已打开但未完成安装
+腾讯视频,com.tencent.qqlive,未测试(未安装),N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,未找到可用APK源;跳过

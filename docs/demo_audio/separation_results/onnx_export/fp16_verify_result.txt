@@ -1,0 +1,50 @@
+============================================================
+htdemucs fp16 ONNX 精度验证报告
+============================================================
+输入: shape=(1, 2, 343980), dtype=float32, seed=0, amp=0.1
+fp32 模型: C:\Users\16411\WorkSpace\AndroidStudioProjects\AudioOverlay\docs\demo_audio\separation_results\onnx_export\htdemucs.onnx
+fp16 模型: C:\Users\16411\WorkSpace\AndroidStudioProjects\AudioOverlay\docs\demo_audio\separation_results\onnx_export\htdemucs_fp16_ok.onnx
+
+--- 体积对比 ---
+fp32: 316.4 MB (316446954 bytes)
+fp16: 165.3 MB (165336784 bytes)
+压缩比: 52.2% (节省 47.8%)
+
+--- 加载 fp32 模型并推理 (warmup=1, run=3) ---
+fp32 输出: shape=(1, 4, 2, 343980), dtype=float32
+fp32 推理耗时: 平均 5121.3ms, 各次=['5272.3', '5175.7', '4915.9']
+
+--- 加载 fp16 模型并推理 (warmup=1, run=3) ---
+fp16 输出: shape=(1, 4, 2, 343980), dtype=float32
+fp16 推理耗时: 平均 7213.4ms, 各次=['7658.0', '7630.1', '6352.0']
+
+--- 速度对比 ---
+fp32 平均: 5121.3ms
+fp16 平均: 7213.4ms
+fp16/fp32 耗时比: 1.41x
+加速比: 0.71x (fp16 相对 fp32)
+注: CPU 上 fp16 通常无加速甚至更慢（需模拟），QNN HTP 上才有显著加速
+
+--- 精度对比 (fp16 vs fp32) ---
+max_abs_diff:  nan
+mean_abs_diff: nan
+rms_diff:      nan
+rms_fp32:      4.269391e-02
+rms_fp16:      nan
+relative_error (mean_abs/rms_fp32): nan
+cosine_similarity: nan
+
+--- 分 stem 精度 ---
+  stem[0] drums: max_abs=nan, mean_abs=nan, cos=nan, rel_err=nan
+  stem[1] bass: max_abs=nan, mean_abs=nan, cos=nan, rel_err=nan
+  stem[2] other: max_abs=nan, mean_abs=nan, cos=nan, rel_err=nan
+  stem[3] vocals: max_abs=nan, mean_abs=nan, cos=nan, rel_err=nan
+
+============================================================
+结论
+============================================================
+ORT 加载 fp16: PASS
+输出 shape [1,4,2,343980]: PASS (实际 (1, 4, 2, 343980))
+余弦相似度 > 0.99: FAIL (nan)
+max_abs_diff: nan
+总体: CHECK

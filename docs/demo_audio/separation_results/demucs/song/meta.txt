@@ -1,0 +1,16 @@
+input=song_44k_mono_60s.wav
+duration_s=60.0
+sr=44100
+model=htdemucs (4-stem: drums,bass,other,vocals)
+model_download_s=163.3
+separation_s=35.42
+rtf=0.590
+original_rms=-11.0
+vocals_rms=-14.6
+accomp_rms=-14.1
+bgm_suppression_g0.1=3.5dB
+processed_g0.1_rms=-14.5
+stem_drums_rms=-18.8
+stem_bass_rms=-17.9
+stem_other_rms=-21.0
+stem_vocals_rms=-14.6

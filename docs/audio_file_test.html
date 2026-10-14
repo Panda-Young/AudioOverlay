@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Audio File Playback Test</title>
+</head>
+<body style="background:#111;color:#0f0;font-family:monospace;padding:20px;">
+<h2>Audio File – Continuous Playback</h2>
+<p id="status">Loading...</p>
+<audio id="a" loop controls style="width:90%;">
+  <source src="test_440_880.wav" type="audio/wav">
+</audio>
+<script>
+var a = document.getElementById('a');
+var st = document.getElementById('status');
+a.onplay = function(){ st.textContent = 'PLAYING: file test_440_880.wav (normal AudioTrack)'; };
+a.onpause = function(){ st.textContent = 'PAUSED'; };
+a.onerror = function(){ st.textContent = 'ERROR: ' + (a.error ? a.error.code : 'unknown'); };
+a.play().then(function(){ st.textContent = 'PLAYING: file test_440_880.wav (normal AudioTrack)'; })
+ .catch(function(e){ st.textContent = 'autoplay blocked: ' + e.message; });
+</script>
+</body>
+</html>

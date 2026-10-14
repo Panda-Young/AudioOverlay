@@ -1,0 +1,10 @@
+=== Bilibili 音频捕获测试 ===
+状态: 未测试 (App未安装)
+
+尝试安装:
+1. APKPure直链 (https://d.apkpure.net/b/APK/tv.danmaku.bili?version=latest): 返回4546字节错误页面
+2. 官方源 (https://wsdownload.hdslb.net/app/iBiliPlayer-tieba.apk): DNS解析失败 (Could not resolve host)
+3. PlayStore: 已打开 market://details?id=tv.danmaku.bili 但未完成安装 (可能需要登录)
+
+包名: tv.danmaku.bili (国内版) 或 com.bilibili.app.in (国际版)
+结论: 跳过, 备注未安装

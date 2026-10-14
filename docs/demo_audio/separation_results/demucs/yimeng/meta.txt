@@ -1,0 +1,16 @@
+input=original.wav
+duration_s=60.0
+sr=44100
+model=htdemucs (4-stem: drums,bass,other,vocals)
+model_download_s=163.3
+separation_s=35.66
+rtf=0.594
+original_rms=-13.1
+vocals_rms=-13.5
+accomp_rms=-26.3
+bgm_suppression_g0.1=0.4dB
+processed_g0.1_rms=-13.5
+stem_drums_rms=-33.2
+stem_bass_rms=-43.9
+stem_other_rms=-27.5
+stem_vocals_rms=-13.5

@@ -1,0 +1,11 @@
+﻿--------- beginning of main
+09-02 10:59:53.304  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 10:59:54.351  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=100800
+09-02 10:59:55.354  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 10:59:56.356  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 10:59:57.403  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=100800
+09-02 10:59:58.406  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 10:59:59.450  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=100800
+09-02 11:00:00.452  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 11:00:01.455  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000
+09-02 11:00:02.500  8814 29487 D AudioRouteLab: Level report: RMS=-96.0 dB, Peak=-96.0 dB, samples=100800

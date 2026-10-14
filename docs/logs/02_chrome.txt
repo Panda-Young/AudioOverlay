@@ -1,0 +1,18 @@
+=== Chrome 网页视频音频捕获测试日志摘要 ===
+测试时间: 2026-09-01 22:15-22:17
+包名: com.android.chrome
+测试页面: https://www.youtube.com/watch?v=dQw4w9WgXcQ (YouTube网页版)
+捕获配置: sampleRate=48000, channels=2, format=PCM_16BIT
+
+RMS 数据 (视频播放期间):
+- 持续 RMS=-96.0 dB, Peak=-96.0 dB (静音)
+- samples=96000-105600/秒
+
+验证:
+- 截图确认HTML5视频正在播放 (0:17/3:33, 暂停按钮可见)
+- AudioFlinger: 0 active tracks = 无音频输出
+- Chrome "Restore pages?"对话框已处理
+- 视频通过点击播放按钮启动 (HTML5自动播放策略限制)
+
+结论: Chrome网页视频可播放但该Android17模拟器上无App音频输出, 无法验证捕获。
+与YouTube App相同的模拟器音频输出问题。

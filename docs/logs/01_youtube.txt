@@ -1,0 +1,22 @@
+=== YouTube 音频捕获测试日志摘要 ===
+测试时间: 2026-09-01 22:05-22:07 (第一次捕获会话)
+包名: com.google.android.youtube
+捕获配置: sampleRate=48000, channels=2, format=PCM_16BIT, bufferSize=3072 frames
+
+关键日志:
+- AudioRecord created: sampleRate=48000, channels=2, format=2, bufferSize=3072 frames
+- MediaProjection created (Share entire screen mode)
+- AudioPlaybackCaptureConfiguration created (USAGE_MEDIA/GAME/UNKNOWN)
+
+RMS 数据 (视频播放期间):
+- 持续 RMS=-96.0 dB, Peak=-96.0 dB (静音)
+- samples=96000-105600/秒 (AudioRecord正常读取但全为零)
+
+验证:
+- 截图确认视频正在播放 (播放控件可见, 进度条移动)
+- AudioFlinger: "2 Tracks of which 0 are active" = 无音频输出
+- 停止捕获后仍 0 active tracks = 非AudioPlaybackCapture导致
+- 媒体音量: STREAM_MUSIC streamVolume=7/15 (非静音)
+
+结论: YouTube视频可播放但该Android17模拟器上无App音频输出, 无法验证捕获。
+完整日志见 00_baseline_stagefright.txt (同一捕获会话)

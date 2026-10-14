@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Audio Test Loop</title></head>
+<body style="background:#000;color:#0f0;font-family:monospace;padding:20px;">
+<h2>Audio Test — Continuous Playback</h2>
+<p id="status">Initializing...</p>
+<button id="btn" style="font-size:24px;padding:20px;">Start Audio</button>
+<script>
+var ctx = null;
+var osc1 = null, osc2 = null, gain = null, lfo = null;
+document.getElementById('btn').addEventListener('click', function() {
+  if (ctx) { ctx.close(); ctx = null; document.getElementById('status').textContent = 'Stopped'; return; }
+  ctx = new (window.AudioContext || window.webkitAudioContext)();
+  // Main tone 440Hz
+  osc1 = ctx.createOscillator(); osc1.type = 'sine'; osc1.frequency.value = 440;
+  // Harmonic 880Hz at lower volume
+  osc2 = ctx.createOscillator(); osc2.type = 'sine'; osc2.frequency.value = 880;
+  // LFO for amplitude modulation (simulates music dynamics)
+  lfo = ctx.createOscillator(); lfo.type = 'sine'; lfo.frequency.value = 0.5;
+  var lfoGain = ctx.createGain(); lfoGain.gain.value = 0.3;
+  gain = ctx.createGain(); gain.gain.value = 0.5;
+  lfo.connect(lfoGain); lfoGain.connect(gain.gain);
+  osc1.connect(gain); osc2.connect(gain);
+  gain.connect(ctx.destination);
+  osc1.start(); osc2.start(); lfo.start();
+  document.getElementById('status').textContent = 'PLAYING: 440+880Hz, AM 0.5Hz, gain 0.5';
+});
+// Manual start only — tap button to begin (user gesture required for Web Audio)
+</script>
+</body>
+</html>

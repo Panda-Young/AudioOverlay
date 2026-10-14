@@ -1,0 +1,64 @@
+# ===== Android Studio 标准模板 =====
+*.iml
+.gradle/
+local.properties
+/.idea/
+.DS_Store
+/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# ===== 构建与本地缓存 =====
+.kotlin/
+.preview/
+*.apk
+*.aab
+
+# ===== 大模型权重（ONNX 不进 git）=====
+# 模型文件用 tools/export_seg128_static.py / export_seg32_static.py 自行导出，
+# 或从 Release 下载后放到 app/src/main/assets/mdx/ 与 app/src/main/assets/spleeter/。
+*.onnx
+
+# ===== QNN / HTP 专有运行时库（Qualcomm 二进制，不随仓库分发）=====
+# 这些是从支持 Hexagon HTP 的设备（SM8850）上提取的闭源库，
+# 仅在带 NSP/HTP 的设备上运行时需要；Redmi 走 CPU EP 不需要。
+app/src/main/assets/qnn/
+app/src/main/jniLibs/
+lib/
+
+# ===== 调试产物：音频 / 视频 / 压缩包 / 安装包 =====
+docs/**/*.wav
+docs/**/*.mp4
+docs/**/*.mp3
+docs/**/*.tar.bz2
+docs/**/*.zip
+*.wav
+*.mp4
+
+# ===== 调试截图、UI dump 与日志过程文件 =====
+docs/**/*.png
+docs/**/*.xml
+*.log
+*.bak
+*.bak_*
+*.bak2_*
+*.bak3
+
+# ===== 根目录临时文件 =====
+build_p0.log
+
+# ===== ONNX Runtime 历史调试残留（实际依赖走 Maven）=====
+# build.gradle.kts 中声明 com.microsoft.onnxruntime:onnxruntime-android-qnn:1.26.0，
+# 本目录下的 aar / 解压 jni .so 均为历史版本调试留存，不参与构建。
+app/libs/
+
+# ===== dump 验证的 float32 原始数据 =====
+*.f32
+
+# ===== 临时 UI/log dump（下划线前缀）=====
+docs/_*.txt
+
+# ===== fftw3 编译中间产物（实际使用 app/src/main/cpp/prebuilt/arm64-v8a/libfftw3f.a）=====
+docs/fftw3/out_libs/
+docs/fftw3/out_libs.tar.gz

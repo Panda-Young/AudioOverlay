@@ -1,0 +1,29 @@
+=== Redmi 真机 AudioRouteLab 捕获管道重验日志 ===
+设备: Redmi 23113RKC6C (vermeer), serial=6dd1f4eb, Android 16 (SDK 36), MIUI V816
+被测App: AudioRouteLab v1.0 (com.example.audiooverlay), targetSdk=37
+测试日期: 2026-09-02
+Log tag: AudioRouteLab
+
+=== 管道验证结果 ===
+1. App启动: am start -n com.example.audiooverlay/.MainActivity — 成功
+2. MediaProjection授权: 系统弹出"要开始使用AudioOverlay录制或投放吗？"对话框
+   - 应用范围: 共享整个屏幕(默认共享一个应用，需切换)
+   - 点击"下一步"/"开始"后授权成功
+3. Start Capture按钮: Jetpack Compose Button, text="Start Capture", bounds[42,195][524,321]
+   - 点击后启动 AudioCaptureService (前台服务, mediaProjection类型)
+4. 捕获参数确认:
+   - Sample Rate: 48000 Hz
+   - Channels: 2 (stereo)
+   - PCM Format: PCM_16BIT
+   - Buffer Size: 30720 bytes (minBufferSize * 4)
+5. 前台服务通知: "AudioRouteLab 正在捕获系统音频..." — 正常显示
+6. Level report: 每秒输出一次, 格式 "Level report: RMS=X dB, Peak=Y dB, samples=N"
+   - 无音频时: RMS=-96.0 dB, Peak=-96.0 dB, samples=96000/100800
+   - samples持续增长证明AudioRecord.read()正常工作，管道通畅
+7. CPU占用: ~3.7% (与前序测试一致，捕获线程轻量)
+8. 稳定性: 连续运行>5分钟无崩溃、无ERROR、无异常
+
+=== 结论 ===
+AudioRouteLab 捕获管道在 Redmi 真机上运行正常，与前序测试结果一致。
+管道可正常读取系统音频输出 mix，参数为 48000Hz/stereo/PCM_16BIT。
+此为 Capture 层实验，不涉及 Process/Playback/输出替换。

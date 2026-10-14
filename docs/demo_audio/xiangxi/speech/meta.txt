@@ -1,0 +1,5 @@
+duration_s=20.0
+original_rms=-13.8
+vocals_rms=-28.7
+accomp_rms=-12.6
+mixed_g1_rms=-26.5

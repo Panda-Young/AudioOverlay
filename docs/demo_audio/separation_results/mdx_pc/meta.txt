@@ -1,0 +1,22 @@
+{
+  "input": "C:\\Users\\16411\\WorkSpace\\AndroidStudioProjects\\AudioOverlay\\docs\\demo_audio\\yimeng\\original.wav",
+  "model": "C:\\Users\\16411\\WorkSpace\\AndroidStudioProjects\\AudioOverlay\\UVR-MDX-NET-Inst_HQ_3_b1.onnx",
+  "sr": 44100,
+  "n_fft": 6144,
+  "hop": 1024,
+  "dim_f": 3072,
+  "seg": 256,
+  "overlap": 0.25,
+  "compensate": 1.022,
+  "inf_total_s": 75.48432803153992,
+  "chunks": 15,
+  "rms_db": {
+    "mix": -13.08,
+    "vocals": -13.68,
+    "accomp": -24.37
+  },
+  "ref_rms": {
+    "vocals": -14.18,
+    "accomp": null
+  }
+}
