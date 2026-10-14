@@ -168,7 +168,7 @@ enableQnn=true（canoe HTP）
 ### 5.1 构建（PowerShell）
 
 ```powershell
-cd C:\Users\16411\WorkSpace\AndroidStudioProjects\AudioOverlay
+cd <项目根目录>
 $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
 .\gradlew.bat assembleDebug --no-daemon
 ```
@@ -179,8 +179,8 @@ $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
 
 ### 5.2 环境依赖
 
-- Python 3.12：`C:\Users\16411\AppData\Local\Programs\Python\Python312\python.exe`（numpy/torch/soundfile/onnxruntime CPU EP）
-- ffmpeg：`C:\Users\16411\AppData\Roaming\TRAE SOLO CN\ModularData\ai-agent\vm\tools\app\ffmpeg\ffmpeg.exe`
+- Python 3.12：numpy / torch / soundfile / onnxruntime（CPU EP，用于 PC 端对照验证）
+- ffmpeg：自行安装并加入 PATH（dump 后转码 / 抽轨 / 音视频对照用）
 - NDK：28.2.13676358
 - CMake：3.22.1
 - ONNX Runtime：com.microsoft.onnxruntime:onnxruntime-android-qnn:1.26.0
@@ -209,9 +209,8 @@ python docs\demo_audio\mdx_dump_verify.py <input.wav> <output.wav>
 
 ### 5.5 测试素材
 
-- 1分钟版：`docs\素材\以梦为马不负韶华_13-14min.mp4`（480x856，AAC 44.1kHz，9.4MB）
-- 15分钟完整版：`C:\Users\16411\OneDrive\Videos\以梦为马不负韶华.mp4`（101MB）
-- 设备端：`/sdcard/Movies/yimeng_full.mp4`（已推送全长版）
+- 自行准备一段含人声 + BGM 的视频（项目仓库不附带素材文件）
+- 设备端推送路径：`/sdcard/Movies/yimeng_full.mp4`
 
 ---
 

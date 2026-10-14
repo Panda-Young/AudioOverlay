@@ -1,21 +1,0 @@
-  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:01<00:03,  1.07s/it] 50%|█████     | 2/4 [00:01<00:01,  1.84it/s]100%|██████████| 4/4 [00:01<00:00,  4.16it/s]100%|██████████| 4/4 [00:01<00:00,  2.93it/s]
-  0%|          | 0/15 [00:00<?, ?it/s]100%|██████████| 15/15 [00:00<?, ?it/s]
-  0%|          | 0/15 [00:00<?, ?it/s]  7%|▋         | 1/15 [00:05<01:14,  5.30s/it] 13%|█▎        | 2/15 [00:10<01:09,  5.34s/it] 20%|██        | 3/15 [00:16<01:04,  5.36s/it] 27%|██▋       | 4/15 [00:21<00:58,  5.34s/it] 33%|███▎      | 5/15 [00:26<00:54,  5.43s/it] 40%|████      | 6/15 [00:32<00:49,  5.51s/it] 47%|████▋     | 7/15 [00:38<00:44,  5.54s/it] 53%|█████▎    | 8/15 [00:43<00:38,  5.55s/it] 60%|██████    | 9/15 [00:49<00:32,  5.48s/it] 67%|██████▋   | 10/15 [00:54<00:27,  5.40s/it] 73%|███████▎  | 11/15 [00:59<00:21,  5.40s/it] 80%|████████  | 12/15 [01:04<00:15,  5.29s/it] 87%|████████▋ | 13/15 [01:09<00:10,  5.25s/it] 93%|█████████▎| 14/15 [01:15<00:05,  5.30s/it]100%|██████████| 15/15 [01:20<00:00,  5.28s/it]100%|██████████| 15/15 [01:20<00:00,  5.37s/it]
-2026-09-04 02:05:16,377 - WARNING - common_separator - Using soundfile for writing.
-2026-09-04 02:05:17,944 - WARNING - common_separator - Using soundfile for writing.
-Traceback (most recent call last):
-  File "C:\Users\16411\WorkSpace\AndroidStudioProjects\AudioOverlay\docs\demo_audio\run_uvr_a15.py", line 77, in <module>
-    json.dump(meta, f, ensure_ascii=False, indent=2)
-  File "C:\Users\16411\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 179, in dump
-    for chunk in iterable:
-                 ^^^^^^^^
-  File "C:\Users\16411\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 432, in _iterencode
-    yield from _iterencode_dict(o, _current_indent_level)
-  File "C:\Users\16411\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 406, in _iterencode_dict
-    yield from chunks
-  File "C:\Users\16411\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 439, in _iterencode
-    o = _default(o)
-        ^^^^^^^^^^^
-  File "C:\Users\16411\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py", line 180, in default
-    raise TypeError(f'Object of type {o.__class__.__name__} '
-TypeError: Object of type float32 is not JSON serializable

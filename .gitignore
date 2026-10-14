@@ -62,3 +62,11 @@ docs/_*.txt
 # ===== fftw3 编译中间产物（实际使用 app/src/main/cpp/prebuilt/arm64-v8a/libfftw3f.a）=====
 docs/fftw3/out_libs/
 docs/fftw3/out_libs.tar.gz
+
+# ===== Python traceback 错误日志 =====
+*.log.err
+
+# ===== 本机个人笔记（根目录下划线前缀，含本机绝对路径，不入库）=====
+/_APK*.md
+/_本机资源*.md
+/_重要*.md
